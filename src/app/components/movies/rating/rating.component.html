@@ -1,0 +1,18 @@
+<div class="rating">
+  <span class="halfStyle" *ngFor="let star of arrayOfNumber; let i = index;">
+    <span class="widthStar">&#9733;</span>
+    <span
+      class="first"
+      (mouseover)="hoverOnStar(i,'first')"
+      [ngStyle]="{'width': i===fullStar && halfStar!==0?(halfStar)+'%':'50%','color': i<fullStar||(i===fullStar&&halfStar!==0)?this.colorOfStars:'#BDBDBD'}"
+      >&#9733;</span
+    >
+    <span
+      class="second"
+      (mouseover)="hoverOnStar(i,'second')"
+      [ngStyle]="{'width': i===fullStar && halfStar!==0?(100-halfStar)+'%':'50%','left': i===fullStar && halfStar!==0?halfStar + '%':'50%', 'color': i<fullStar?this.colorOfStars:'#BDBDBD'}"
+      >&#9733;</span
+    >
+  </span>
+  <!-- <span>☆</span><span>☆</span><span>☆</span><span>☆</span> -->
+</div>
